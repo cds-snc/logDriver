@@ -1,0 +1,16 @@
+{
+  "name": "logger",
+  "version": "0.0.1",
+  "description": "CDS logger",
+  "main": "dist/logger.js",
+  "module": "src/index.mjs",
+  "source": "src/index.mjs",
+  "scripts": {
+    "build": "microbundle -f cjs --target node --no-compress",
+    "dev": "microbundle watch",
+    "release": "npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "devDependencies": {
+    "microbundle": "^0.9.0"
+  }
+}
