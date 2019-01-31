@@ -1,6 +1,6 @@
 {
   "name": "@cdssnc/logger",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "description": "CDS logger",
   "main": "dist/logger.js",
   "umd:main": "dist/logger.umd.js",
@@ -14,7 +14,7 @@
     "prepare": "microbundle",
     "build": "microbundle --no-compress",
     "dev": "microbundle watch",
-    "release": "npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
+    "release": "git tag $npm_package_version && git push --tags && npm publish",
     "lint": "eslint src/*.js",
     "test": "jest"
   },
