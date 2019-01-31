@@ -1,3 +1,1 @@
-export default Logger = () => {
-  return true;
-};
+export { default as Logger } from "./lib/logger";

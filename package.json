@@ -12,7 +12,7 @@
   ],
   "scripts": {
     "prepare": "microbundle",
-    "build": "microbundle",
+    "build": "microbundle --no-compress",
     "dev": "microbundle watch",
     "release": "npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
     "lint": "eslint src/*.js",
