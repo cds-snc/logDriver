@@ -26,7 +26,10 @@ action "Is master" {
 action "Publish" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Is master"]
-  secrets = ["NPM_AUTH_TOKEN"]
+  secrets = [
+    "NPM_AUTH_TOKEN",
+    "GITHUB_TOKEN",
+  ]
   env = {
     GIT_AUTHOR_NAME = "CDS Actions"
     GIT_AUTHOR_EMAIL = "actions@cds-snc.ca"
