@@ -16,7 +16,7 @@
     "dev": "microbundle watch",
     "lint": "eslint src/*.js",
     "test": "jest",
-    "release": "release-it --no-git.requireUpstream"
+    "release": "release-it -n --no-git.requireUpstream"
   },
   "lint-staged": {
     "*.js": [
