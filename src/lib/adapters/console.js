@@ -1,5 +1,5 @@
-export const consoleLogger = payload => {
-  switch (payload.eventType.replace("com.github.cds-snc", "")) {
+export const consoleLogger = (level, payload) => {
+  switch (level) {
     case "debug":
       console.debug(payload);
       break;
@@ -11,6 +11,8 @@ export const consoleLogger = payload => {
       break;
     case "warn":
       console.warn(payload);
+      break;
+    default:
       break;
   }
 };
