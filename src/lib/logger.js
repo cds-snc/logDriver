@@ -5,27 +5,19 @@ import { consoleLogger } from "./adapters";
 
 class Logger {
   static debug(msg, options = {}) {
-    const payload = this.generatePayload("debug", msg, options);
-    this.output(payload);
-    return payload;
+    return this.generatePayload("debug", msg, options);
   }
 
   static error(msg, options = {}) {
-    const payload = this.generatePayload("error", msg, options);
-    this.output(payload);
-    return payload;
+    return this.generatePayload("error", msg, options);
   }
 
   static info(msg, options = {}) {
-    const payload = this.generatePayload("info", msg, options);
-    this.output(payload);
-    return payload;
+    return this.generatePayload("info", msg, options);
   }
 
   static warn(msg, options = {}) {
-    const payload = this.generatePayload("warn", msg, options);
-    this.output(payload);
-    return payload;
+    return this.generatePayload("warn", msg, options);
   }
 
   static generatePayload(level, msg, options) {
@@ -40,11 +32,13 @@ class Logger {
       source: "/"
     };
 
-    return Object.assign(standardPayload, options);
+    const payload = Object.assign(standardPayload, options);
+    this.output(level, payload);
+    return payload;
   }
 
-  static output(payload) {
-    consoleLogger(payload);
+  static output(level, payload) {
+    consoleLogger(level, payload);
   }
 }
 

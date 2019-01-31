@@ -24,7 +24,7 @@ describe("debug", () => {
   it("creates a debug level event and sends it to console log", () => {
     console.debug = jest.fn();
     let result = Logger.debug("This is a debug message");
-    expect(console.debub).toBeCalled();
+    expect(console.debug).toBeCalled();
     expect(result.eventType).toEqual("com.github.cds-snc.debug");
   });
 
@@ -54,32 +54,32 @@ describe("error", () => {
 
 describe("info", () => {
   it("creates a info level event and sends it to console log", () => {
-    console.log = jest.fn();
+    console.info = jest.fn();
     let result = Logger.info("This is a info message");
-    expect(console.log).toBeCalled();
+    expect(console.info).toBeCalled();
     expect(result.eventType).toEqual("com.github.cds-snc.info");
   });
 
   it("allows you to override the default options", () => {
-    console.log = jest.fn();
+    console.info = jest.fn();
     let result = Logger.info("This is a info message", { source: "/foo" });
-    expect(console.log).toBeCalled();
+    expect(console.info).toBeCalled();
     expect(result.source).toEqual("/foo");
   });
 });
 
 describe("warn", () => {
   it("creates a warn level event and sends it to console log", () => {
-    console.log = jest.fn();
+    console.warn = jest.fn();
     let result = Logger.warn("This is a warn message");
-    expect(console.log).toBeCalled();
+    expect(console.warn).toBeCalled();
     expect(result.eventType).toEqual("com.github.cds-snc.warn");
   });
 
   it("allows you to override the default options", () => {
-    console.log = jest.fn();
+    console.warn = jest.fn();
     let result = Logger.warn("This is a warn message", { source: "/foo" });
-    expect(console.log).toBeCalled();
+    expect(console.warn).toBeCalled();
     expect(result.source).toEqual("/foo");
   });
 });
