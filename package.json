@@ -3,10 +3,16 @@
   "version": "0.0.1",
   "description": "CDS logger",
   "main": "dist/logger.js",
-  "module": "src/index.mjs",
+  "umd:main": "dist/logger.umd.js",
+  "module": "dist/index.mjs",
   "source": "src/index.mjs",
+  "unpkg": "dist/logger.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "microbundle -f cjs --target node --no-compress",
+    "prepare": "microbundle",
+    "build": "microbundle",
     "dev": "microbundle watch",
     "release": "npm t && git commit -am $npm_package_version && git tag $npm_package_version && git push && git push --tags && npm publish",
     "lint": "eslint src/*.js",
