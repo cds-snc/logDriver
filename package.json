@@ -1,6 +1,6 @@
 {
   "name": "@cdssnc/logger",
-  "version": "0.0.26",
+  "version": "0.0.23",
   "description": "CDS logger",
   "main": "dist/logger.js",
   "umd:main": "dist/logger.umd.js",
