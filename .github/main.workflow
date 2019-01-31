@@ -1,18 +1,18 @@
 workflow "CI/CD" {
   on = "push"
   resolves = [
-    "docker://culturehq/actions-yarn:latest",
     "Is master",
+    "Publish",
   ]
 }
 
 action "Install" {
-  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  uses = "docker://culturehq/actions-yarn:latest"
   args = "install"
 }
 
 action "Test" {
-  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  uses = "docker://culturehq/actions-yarn:latest"
   needs = ["Install"]
   args = "test"
 }
@@ -23,8 +23,8 @@ action "Is master" {
   args = "branch master"
 }
 
-action "docker://culturehq/actions-yarn:latest" {
-  uses = "docker://culturehq/actions-yarn:latest"
+action "Publish" {
+  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Is master"]
   secrets = ["NPM_AUTH_TOKEN"]
   env = {
@@ -33,4 +33,5 @@ action "docker://culturehq/actions-yarn:latest" {
     GIT_COMMITTER_NAME = "CDS Actions"
     GIT_COMMITTER_EMAIL = "actions@cds-snc.ca"
   }
+  args = "run release"
 }
