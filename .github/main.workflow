@@ -1,6 +1,9 @@
 workflow "CI/CD" {
   on = "push"
-  resolves = ["Publish"]
+  resolves = [
+    "Publish",
+    "Is master",
+  ]
 }
 
 action "Install" {
@@ -23,6 +26,6 @@ action "Is master" {
 action "Publish" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Is master"]
-  args = "run release"
+  args = "publish --access public"
   secrets = ["NPM_AUTH_TOKEN"]
 }
