@@ -33,8 +33,12 @@ class Logger {
     };
 
     const payload = Object.assign(standardPayload, options);
-    this.output(level, payload);
+    this.output(level, options.str ? this.toStr(payload) : payload);
     return payload;
+  }
+
+  static toStr(err) {
+    return JSON.stringify(err);
   }
 
   static output(level, payload) {
