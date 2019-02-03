@@ -51,6 +51,7 @@
     "release-it": "^10.0.7"
   },
   "dependencies": {
+    "@google-cloud/error-reporting": "^0.6.0",
     "uuid": "^3.3.2"
   }
 }

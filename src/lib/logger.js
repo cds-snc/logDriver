@@ -2,8 +2,18 @@
 
 import uuidv4 from "uuid/v4";
 import { consoleLogger } from "./adapters";
+import { Events } from "./Events";
 
+const _events = new Events();
 class Logger {
+  static get events() {
+    return _events;
+  }
+
+  static subscribe(type, fn) {
+    return Logger.events.subscribe(type, fn);
+  }
+
   static debug(msg, options = {}) {
     return this.generatePayload("debug", msg, options);
   }
@@ -33,16 +43,13 @@ class Logger {
     };
 
     const payload = Object.assign(standardPayload, options);
-    this.output(level, options.str ? this.toStr(payload) : payload);
+    this.output(level, payload);
     return payload;
-  }
-
-  static toStr(err) {
-    return JSON.stringify(err);
   }
 
   static output(level, payload) {
     consoleLogger(level, payload);
+    _events.publish("error", level, payload);
   }
 }
 
