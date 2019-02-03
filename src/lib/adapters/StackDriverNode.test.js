@@ -1,5 +1,5 @@
-import Logger from "../../../lib/logger";
-import { StackDriverNodeLogger } from "../../../lib/adapters/StackDriverNode";
+import Logger from "../logger";
+import { StackDriverNodeLogger } from "./StackDriverNode";
 
 describe("StackDriverNodeLogger", () => {
   it("Subscribes to logger and receives message", () => {
