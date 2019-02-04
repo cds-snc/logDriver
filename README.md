@@ -1,4 +1,8 @@
-# CDS Log Driver
+# CDS Log Driver 🇨🇦
+
+Log driving is a means of moving logs (sawn tree trunks) from a forest to sawmills and pulp mills downstream using the current of a river.
+
+In our case we want to move logs out of developer consoles and into places like StackDriver.
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f3fbbbb66e6823d680c6/maintainability)](https://codeclimate.com/github/cds-snc/logDriver/maintainability)
 
