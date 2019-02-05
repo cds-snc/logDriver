@@ -1,5 +1,9 @@
 # CDS Log Driver 🇨🇦
 
+Log driving is a means of moving logs (sawn tree trunks) from a forest to sawmills and pulp mills downstream using the current of a river.
+
+In our case we want to move logs (console messages) out of developer consoles and into places like StackDriver.
+
 [![Maintainability](https://api.codeclimate.com/v1/badges/f3fbbbb66e6823d680c6/maintainability)](https://codeclimate.com/github/cds-snc/logDriver/maintainability)
 
 Creates a standardized logging format for output + log collection.
@@ -20,6 +24,14 @@ standardPayload = {
 ## Adapters
 
 #### StackDriver Node
+
+Add credentials to you .env file
+
+```bash
+GOOGLE_APPLICATION_CREDENTIALS="...67550c60cde8.json"
+```
+
+Import the logger into your app
 
 ```javascript
 import { Logger, StackDriverNodeLogger } from "@cdssnc/logger";
