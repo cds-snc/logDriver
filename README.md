@@ -34,8 +34,8 @@ GOOGLE_APPLICATION_CREDENTIALS="...67550c60cde8.json"
 Import the logger into your app
 
 ```javascript
-import { Logger, StackDriverNodeLogger } from "@cdssnc/logger";
-Logger.subscribe("error", StackDriverNodeLogger.log);
+import { Logger, StackDriverNode } from "@cdssnc/logger";
+Logger.subscribe("error", StackDriverNode.log);
 Logger.debug("The message from the server"); //logs to console + StackDriver
 ```
 
