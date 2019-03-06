@@ -21,6 +21,8 @@ standardPayload = {
 };
 ```
 
+Install with `yarn add @cdssnc/logdriver` or `npm install @cdssnc/logdriver`.
+
 ## Adapters
 
 #### StackDriver Node
