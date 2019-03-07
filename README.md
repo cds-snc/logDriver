@@ -4,7 +4,7 @@ Log driving is a means of moving logs (sawn tree trunks) from a forest to sawmil
 
 In our case we want to move logs (console messages) out of developer consoles and into places like StackDriver.
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/f3fbbbb66e6823d680c6/maintainability)](https://codeclimate.com/github/cds-snc/logDriver/maintainability)
+[![Phase](https://img.shields.io/badge/Phase-Beta-22a7f0.svg)](https://digital.canada.ca/products/)  [![Maintainability](https://api.codeclimate.com/v1/badges/f3fbbbb66e6823d680c6/maintainability)](https://codeclimate.com/github/cds-snc/logDriver/maintainability)
 
 Creates a standardized logging format for output + log collection.
 
