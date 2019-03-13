@@ -42,5 +42,5 @@ action "Publish" {
 
 action "license-checker" {
   uses = "docker://cdssnc/node-license-checker-github-action"
-  args = "--onlyAllow 'MIT, MIT OR X11, BSD, ISC'"
+  args = "--onlyAllow 'MIT; MIT OR X11; MIT*; BSD; ISC'"
 }
