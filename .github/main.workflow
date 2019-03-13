@@ -11,9 +11,15 @@ action "Install" {
   args = "install"
 }
 
+action "Licence check" {
+  uses = "docker://cdssnc/node-license-checker-github-action",
+  args = "--onlyAllow 'MIT; MIT OR X11; BSD; ISC'"
+  needs = ["Install"]
+}
+
 action "Test" {
   uses = "docker://culturehq/actions-yarn:latest"
-  needs = ["Install"]
+  needs = ["Licence check"]
   args = "test"
 }
 
