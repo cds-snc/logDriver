@@ -54,3 +54,7 @@ StackDriverClient.init(
 Logger.subscribe("error", StackDriverClient.log);
 Logger.warn("Client side message sent to StackDriver");
 ```
+
+### Questions?
+
+Please contact us through any of the multiple ways listed on our [website](https://digital.canada.ca/).
