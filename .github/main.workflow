@@ -12,8 +12,8 @@ action "Install" {
 }
 
 action "Licence check" {
-  uses = "docker://cdssnc/node-license-checker-github-action",
-  args = "--onlyAllow 'MIT; MIT OR X11; BSD; ISC'"
+  uses = "docker://cdssnc/node-license-checker-github-action"
+  args = "--onlyAllow 'MIT; MIT OR X11; BSD; ISC; Apache-2.0'"
   needs = ["Install"]
 }
 
