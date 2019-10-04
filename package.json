@@ -11,12 +11,13 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "microbundle",
+    "prepare": "npm run snyk-protect && microbundle",
     "build": "microbundle --no-compress",
     "dev": "microbundle watch",
     "lint": "eslint src/*.js",
     "test": "jest",
-    "release": "release-it -n --no-git.requireUpstream"
+    "release": "release-it -n --no-git.requireUpstream",
+    "snyk-protect": "snyk protect"
   },
   "lint-staged": {
     "*.js": [
@@ -55,6 +56,8 @@
     "@google-cloud/error-reporting": "^0.6.1",
     "stackdriver-errors-js": "^0.5.0",
     "stacktrace-js": "^2.0.0",
-    "uuid": "^3.3.2"
-  }
+    "uuid": "^3.3.2",
+    "snyk": "^1.230.5"
+  },
+  "snyk": true
 }
